@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approvals</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="approvals.html">Approvals</a>
+        <a id="approvalsLink" href="approvals.html">Approvals</a>
+
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>Pending Approvals</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Travel</td>
+                        <td>$320.00</td>
+                        <td>
+                            <button onclick="approveExpense()">Approve</button>
+                            <button class="danger" onclick="rejectExpense()">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

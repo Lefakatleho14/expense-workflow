@@ -1,0 +1,140 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #2c2c2c;
+}
+
+/* Layout */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #1e2a38;
+    padding: 15px 25px;
+}
+
+    .navbar a {
+        color: #ffffff;
+        margin-right: 20px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+/* Cards */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+/* Forms */
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 12px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Buttons */
+button {
+    margin-top: 15px;
+    padding: 10px 16px;
+    background-color: #0052cc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button.secondary {
+        background-color: #6c757d;
+    }
+
+    button.danger {
+        background-color: #d9534f;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+    .table th, .table td {
+        padding: 12px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .table th {
+        background-color: #f0f2f5;
+        text-align: left;
+    }
+
+/* Status badges */
+.status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+    display: inline-block;
+}
+
+    .status.submitted {
+        background-color: #f0ad4e;
+        color: #ffffff;
+    }
+
+    .status.manager {
+        background-color: #0275d8;
+        color: #ffffff;
+    }
+
+    .status.finance {
+        background-color: #5bc0de;
+        color: #ffffff;
+    }
+
+    .status.paid {
+        background-color: #5cb85c;
+        color: #ffffff;
+    }
+
+    .status.rejected {
+        background-color: #d9534f;
+        color: #ffffff;
+    }

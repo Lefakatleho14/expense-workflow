@@ -1,0 +1,6 @@
+@expense_workflow_HostAddress = http://localhost:5149
+
+GET {{expense_workflow_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

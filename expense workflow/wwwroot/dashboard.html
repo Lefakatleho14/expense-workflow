@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Expense System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="submit-expense.html">Submit Expense</a>
+        <a href="approvals.html">Approvals</a>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>My Expenses</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-02-01</td>
+                        <td>Travel</td>
+                        <td>$250.00</td>
+                        <td><span class="status submitted">Submitted</span></td>
+                    </tr>
+                    <tr>
+                        <td>2025-01-15</td>
+                        <td>Meals</td>
+                        <td>$75.00</td>
+                        <td><span class="status paid">Paid</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

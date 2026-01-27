@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Expense</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="submit-expense.html">Submit Expense</a>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>Submit New Expense</h1>
+
+            <label>Amount</label>
+            <input type="number" placeholder="0.00">
+
+            <label>Category</label>
+            <select>
+                <option>Travel</option>
+                <option>Meals</option>
+                <option>Accommodation</option>
+                <option>Other</option>
+            </select>
+
+            <label>Description</label>
+            <textarea rows="4"></textarea>
+
+            <label>Expense Date</label>
+            <input type="date">
+
+            <label>Receipt</label>
+            <input type="file" id="receipt">
+
+            <button onclick="submitExpense()">Submit Expense</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
