@@ -7,34 +7,23 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --------------------
-// DATABASE (Supabase)
-// --------------------
+// DB
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("Default")));
+    options.UseInMemoryDatabase("ExpenseDb"));
 
-// --------------------
-// SERVICES
-// --------------------
+// Services
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ExpenseService>();
 builder.Services.AddScoped<ReportingService>();
 
-// --------------------
-// CONTROLLERS
-// --------------------
+// Controllers
 builder.Services.AddControllers();
 
-// --------------------
-// SWAGGER
-// --------------------
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// --------------------
-// AUTHENTICATION (JWT)
-// --------------------
+// JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -56,23 +45,33 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// --------------------
-// MIDDLEWARE PIPELINE
-// --------------------
-if (app.Environment.IsDevelopment())
+// Seed user
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    db.Users.Add(new ExpenseSystem.Api.Models.User
+    {
+        Id = Guid.NewGuid(),
+        Email = "lefa@manager.com",
+        PasswordHash = "password",
+        Role = "Manager"
+    });
+
+    db.SaveChanges();
 }
 
+// Middleware
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseDefaultFiles();
-app.UseStaticFiles();
-
 app.MapControllers();
+app.MapFallbackToFile("login.html");
 
 app.Run();

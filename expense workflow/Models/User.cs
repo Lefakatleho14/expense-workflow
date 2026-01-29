@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+namespace ExpenseSystem.Api.Models;
+
 public class User
 {
     [Key]
     public Guid Id { get; set; }
-
-    [Required]
-    public string FullName { get; set; } = null!;
 
     [Required]
     public string Email { get; set; } = null!;
@@ -16,6 +15,4 @@ public class User
 
     [Required]
     public string Role { get; set; } = "Employee";
-
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

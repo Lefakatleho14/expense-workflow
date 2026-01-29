@@ -1,5 +1,5 @@
-﻿using ExpenseSystem.Api.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using ExpenseSystem.Api.Models;
 
 namespace ExpenseSystem.Api.Data;
 
@@ -10,6 +10,5 @@ public class AppDbContext : DbContext
 
     public DbSet<User> Users => Set<User>();
     public DbSet<Expense> Expenses => Set<Expense>();
-    public DbSet<ExpenseStatusHistory> ExpenseStatusHistory
-        => Set<ExpenseStatusHistory>();
+    public DbSet<ExpenseStatusHistory> ExpenseStatusHistory => Set<ExpenseStatusHistory>();
 }
